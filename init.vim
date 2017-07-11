@@ -51,7 +51,6 @@ endif
 
 call s:source_rc('options.rc.vim')
 call s:source_rc('mappings.rc.vim')
-call s:source_rc('neovim.rc.vim')
 
 set secure
 
