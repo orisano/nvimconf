@@ -10,3 +10,28 @@ repo = 'rcmdnk/vim-markdown'
 [[plugins]]
 repo = 'nsf/gocode'
 rtp = 'vim'
+
+[[plugins]]
+repo = 'autozimu/LanguageClient-neovim'
+hook_add = '''
+set hidden
+
+let g:LanguageClient_serverCommands = {
+    \ }
+
+let g:LanguageClient_autoStart = 1
+'''
+
+[[plugins]]
+repo = 'w0rp/ale'
+hook_add = '''
+let g:ale_lint_on_save = 1
+let g:ale_lint_on_text_changed = 0
+let g:ale_lint_on_enter = 0
+
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 1
+
+let g:ale_open_list = 1
+leg g:ale_keep_list_window_open = 1
+'''

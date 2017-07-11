@@ -1,2 +1,10 @@
 [[plugins]]
 repo = 'Shougo/context_filetype.vim'
+
+[[plugins]]
+repo = 'Shougo/denite.nvim'
+on_cmd = 'Denite'
+
+[[plugins]]
+repo = 'fatih/vim-go'
+on_ft = 'go'
