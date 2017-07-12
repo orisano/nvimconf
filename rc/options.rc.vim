@@ -22,6 +22,7 @@ let &g:undodir = &directory
 
 autocmd MyAutoCmd WinEnter * checktime
 
+set number
 set list
 
 set t_vb=

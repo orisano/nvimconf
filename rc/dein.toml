@@ -11,16 +11,17 @@ repo = 'rcmdnk/vim-markdown'
 repo = 'nsf/gocode'
 rtp = 'vim'
 
-[[plugins]]
-repo = 'autozimu/LanguageClient-neovim'
-hook_add = '''
-set hidden
-
-let g:LanguageClient_serverCommands = {
-    \ }
-
-let g:LanguageClient_autoStart = 1
-'''
+#[[plugins]]
+#repo = 'autozimu/LanguageClient-neovim'
+#hook_add = '''
+#set hidden
+#
+#let g:LanguageClient_serverCommands = {
+#    \ 'go': ['go-langserver'],
+#    \ }
+#
+#let g:LanguageClient_autoStart = 1
+#'''
 
 [[plugins]]
 repo = 'w0rp/ale'
