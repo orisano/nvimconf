@@ -1,10 +1,54 @@
 [[plugins]]
+repo = 'Shougo/neomru.vim'
+
+[[plugins]]
 repo = 'Shougo/context_filetype.vim'
+
+[[plugins]]
+repo = 'Shougo/unite.vim'
+depends = 'neomru.vim'
+hook_source = 'source ~/.config/nvim/rc/plugins/unite.rc.vim'
+
 
 [[plugins]]
 repo = 'Shougo/denite.nvim'
 on_cmd = 'Denite'
+hook_source = 'source ~/.config/nvim/rc/plugins/denite.rc.vim'
 
 [[plugins]]
 repo = 'fatih/vim-go'
 on_ft = 'go'
+
+[[plugins]]
+repo = 'Shougo/vimfiler.vim'
+depends = 'unite.vim'
+on_map = {n = '<Plug>'}
+on_if = "isdirectory(bufname('%'))"
+hook_add = 'nnoremap <silent> [Space]v :<C-u>VimFiler -invisible<CR>'
+hook_source = '''
+call vimfiler#custom#profile('default', 'context', {'safe': 0, 'auto_expand': 1, 'parent': 0})
+
+let g:vimfiler_as_default_explorer = 1
+let g:vimfiler_tree_leaf_icon = ' '
+let g:vimfiler_tree_opened_icon = '▾'
+let g:vimfiler_tree_closed_icon = '▸'
+let g:vimfiler_file_icon = ' '
+let g:vimfiler_readonly_file_icon = '✗'
+let g:vimfiler_marked_file_icon = '✓'
+
+autocmd MyAutoCmd FileType vimfiler call s:vimfiler_my_settings()
+function! s:vimfiler_my_settings() abort "{{{
+    nmap <buffer> <Tab> <Plug>(vimfiler_switch_to_other_window)
+endfunction"}}}
+'''
+
+[[plugins]]
+repo = 'ctrlpvim/ctrlp.vim'
+
+[[plugins]]
+repo = 'rhysd/accelerated-jk'
+on_map = {n = '<Plug>'}
+hook_add = '''
+nmap <silent>j <Plug>(accelerated_jk_gj)
+nmap <silent>k <Plug>(accelerated_jk_gk)
+'''
